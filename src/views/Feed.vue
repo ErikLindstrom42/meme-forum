@@ -1,12 +1,14 @@
 <template>
   <v-container>
     <div v-for="meme in memes" :key="meme.id" class="py-5">
-      <meme
-        class="mx-auto"
-        :top="meme.topText"
-        :bottom="meme.bottomText"
-        :imageURL="meme.imageURL"
-      />
+      <router-link :to="`/meme/${meme.id}`">
+        <meme
+          class="mx-auto"
+          :top="meme.topText"
+          :bottom="meme.bottomText"
+          :imageURL="meme.imageURL"
+        />
+      </router-link>
     </div>
   </v-container>
 </template>
